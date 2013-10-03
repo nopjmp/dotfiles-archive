@@ -1,0 +1,32 @@
+compress asdf
+compress adsf
+compress
+extracthere
+extracthre
+copy
+hidden
+showhidden
+delete .wallpaper
+show_hidden
+help
+rename .wallpaper
+set show-hidden true
+set showhidden true
+show-hidden
+rename ac.png
+rename arch.png
+rename bat_empty.png
+rename bat_full.png
+rename bat_low.png
+rename fs.png
+rename spkr_low.png
+rename spkr_full.png
+open_with 
+delet
+del
+d
+o
+options
+
+delete
+set show_hidden true

@@ -1,0 +1,130 @@
+--------------------------
+-- Custom awesome theme --
+--------------------------
+-- read program outut
+function pread(cmd)
+    if cmd and cmd ~= "" then
+        local f, err = io.popen(cmd, 'r')
+        if f then
+            local s = f:read("*all")
+            f:close()
+            return s
+        else
+            return err
+        end
+    end
+end
+
+theme = {}
+
+home                = os.getenv("HOME")
+config              = home .. "/.config/awesome"
+
+theme.font          = "Tewi 7"
+
+local black         = pread("printcolor black")
+local lblack        = pread("printcolor lblack")
+local lwhite        = pread("printcolor lwhite")
+local white         = pread("printcolor white")
+local lmagenta      = pread("printcolor lmagenta")
+local lcyan         = pread("printcolor lcyan")
+local dcyan         = pread("printcolor cyan")
+local lblue         = pread("printcolor lblue")
+local dblue         = pread("printcolor blue")
+local lred          = pread("printcolor lred")
+local background    = pread("printcolor background")
+local foreground    = pread("printcolor foreground")
+
+theme.bg_light      = pread("printcolor color16")
+
+theme.bg_normal     = background
+theme.bg_focus      = background
+theme.bg_urgent     = background
+theme.bg_minimize   = background
+theme.bg_systray    = background
+
+theme.fg_normal     = white
+theme.fg_focus      = lwhite
+theme.fg_urgent     = "#cfa1a1"
+theme.fg_minimize   = lblack
+
+theme.fg_modebox    = lmagenta
+
+theme.fg_delimiter  = lblack
+
+theme.fg_dmenu      = dblue
+theme.fg_dmenu_foc  = lblue
+theme.bg_dmenu      = background
+theme.bg_dmenu_foc  = background
+
+theme.border_width  = 1
+theme.border_normal = black
+theme.border_light  = "#999999"
+theme.border_marked = lblue
+
+theme.taglist_fg_urgent   = lred
+theme.taglist_fg_occupied = lblue
+theme.taglist_fg_focus    = theme.fg_focus
+
+theme.tasklist_fg_focus   = lwhite
+theme.tasklist_fg_normal  = white
+theme.tasklist_fg_urgent  = "#cfa1a1"
+
+-- There are other variable sets
+-- overriding the default one when
+-- defined, the sets are:
+-- [taglist|tasklist]_[bg|fg]_[focus|urgent]
+-- titlebar_[bg|fg]_[normal|focus]
+-- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
+-- mouse_finder_[color|timeout|animate_timeout|radius|factor]
+-- Example:
+--theme.taglist_bg_focus = "#ff0000"
+
+-- Display the taglist squares
+theme.taglist_squares_sel   = config .. "/themes/ttt/taglist/squarefw.png"
+theme.taglist_squares_unsel = config .. "/themes/ttt/taglist/squarew.png"
+
+theme.tasklist_floating = "+ "
+theme.tasklist_ontop = ""
+theme.tasklist_sticky = ""
+theme.tasklist_maximized_horizontal = ""
+theme.tasklist_maximized_vertical = ""
+
+-- Variables set for theming the menu:
+-- menu_[bg|fg]_[normal|focus]
+-- menu_[border_color|border_width]
+theme.menu_submenu_icon = config .. "/themes/ttt/submenu.png"
+theme.menu_height = "15"
+theme.menu_width  = "80"
+
+-- You can add as many variables as
+-- you wish and access them by using
+-- beautiful.variable in your rc.lua
+--theme.bg_widget = "#cc0000"
+
+-- You can use your own command to set your wallpaper
+--
+theme.wallpaper_cmd = 'sh -c "`cat ~/.fehbg`"'
+theme.wallpaper = {}
+theme.wallpaper.default = home .. "/Wallpapers/wallpaper-2044061.png"
+
+theme.layout = {
+	fairh      = "",
+	fairv      = "",
+	floating   = "",
+	max        = "",
+	spiral     = "",
+	tilebottom = "",
+	tileleft   = "",
+	tile       = "",
+	tiletop    = "tiletopw",
+	fullscreen = "fullscreenw",
+	dwindle    = "dwindlew",
+	magnifier  = "magnifier",
+}
+
+theme.awesome_icon = config .. "/icons/awesome16.png"
+
+theme.icon_theme = "Faenza" -- Replace the string for the theme you want to use
+return theme
+-- vim: set ft=lua
