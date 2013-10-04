@@ -1,0 +1,10 @@
+#!/bin/sh
+# Set $PUUSH_API_KEY to your key and export it
+# The key is found on <http://puush.me/account/settings>.
+
+for file in "$@"; do
+	curl --progress-bar "https://puush.me/api/up" \
+		-F k="$PUUSH_API_KEY" -F z="poop" -F f="@$file" |
+	sed -e 's/0,\|,.*//g'
+	echo
+done

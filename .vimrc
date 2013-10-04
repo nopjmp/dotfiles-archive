@@ -114,7 +114,7 @@ command! W :execute ':silent w !sudo % > /dev/null' | :edit!
 command! Wq :execute ':W' | :q
 command! WQ :Wq
 map ZS :Wq<Return>
-map <C-s> :w
+map <C-s> :w<cr>
 
 " solid underscore
 "let &t_SI .= "\<ESC>[4 q"

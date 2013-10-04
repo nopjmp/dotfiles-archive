@@ -1,0 +1,3 @@
+#!/bin/sh -e
+mpc play $(mpc playlist -f '%position% %artist% - %title%' |
+	dmenu "$@" | sed -e 's/\([0-9]*\).*/\1/')
