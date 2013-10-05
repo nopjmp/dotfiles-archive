@@ -1,0 +1,80 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+* {
+  font-family: Tamsyn !important;
+  font-size: 14px !important;
+}
+
+#nav-bar {
+    visibility: collapse !important;
+}
+
+#navigator-toolbox:hover > #nav-bar {
+    visibility: visible !important;
+}
+
+/* Tabs */
+.TabsToolbar {
+  background: #101010 !important;
+  overflow: hidden !important;
+}
+
+.tabbrowser-tabs  {
+  background: #101010 !important;
+}
+
+.tabbrowser-tab {
+  text-align: center !important;
+}
+.tabbrowser-tab, #appmenu-toolbar-button {
+  -moz-appearance: none !important;
+  -moz-border-image: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  border-right: 1px solid #99a !important;
+  min-height: 16px !important;
+  max-height: 16px !important;
+  color: #9999aa !important;
+  padding: 0 5px !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  color: #5f5fee !important;
+}
+
+#alltabs-button, .tab-icon-image {
+  display: none !important;
+}
+
+/* App menu colorized */
+
+#main-window:not([privatebrowsingmode]) #appmenu-toolbar-button {
+  color: #80ff00 !important;
+  background: #101010 !important;
+}
+
+/* Private browsing mode */
+
+#main-window #appmenu-toolbar-button {
+  color: #bb88dd !important;
+  background: #101010 !important;
+}
+
+/* Tab close button */
+
+.tab-close-button {
+  display: none !important;
+}
+
+/* Tab new button */
+
+.tabs-newtab-button {
+  display: none !important;
+}
+
+/* Back button only when useful */
+
+#back-button[disabled="true"] { 
+  display: none;
+}
