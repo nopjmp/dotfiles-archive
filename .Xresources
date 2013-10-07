@@ -38,12 +38,10 @@ URxvt*externalBorder    : 0
 ! Fonts
 URxvt*font: \
     xft:Termsynu:pixelsize=14:antialias=false, \
-    xft:Loli Gothic:pixelsize=10:antialias=false, \
     xft:WenQuanYi Bitmap Song:size=8:antialias=false, \
     xft:Fixed
 URxvt*boldFont: \
     xft:Termsynu:pixelsize=14:antialias=false:style=bold, \
-    xft:Loli Gothic:pixelsize=10:antialias=false, \
     xft:WenQuanYi Bitmap Song:size=8:antialias=false, \
     xft:Fixed
 

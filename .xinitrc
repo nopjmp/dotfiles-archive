@@ -18,6 +18,7 @@ fi
 # sync firefox before executing
 firefox-sync &
 
+urxvtd -q -o -f &
 # I hate cursors
 urxvtd -q -o -f &
 unclutter -idle 10 &

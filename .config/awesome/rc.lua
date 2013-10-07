@@ -36,7 +36,7 @@ local modkey  = "Mod4"
 
 -- Standard programs
 local browser    = os.getenv("BROWSER") or "firefox"
-local terminal   = "urxvt"
+local terminal   = "urxvtc"
 local editor     = terminal .. " -e vim "
 local tasks      = terminal .. " -e htop "
 local files      = terminal .. " -e ranger "
