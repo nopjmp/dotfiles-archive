@@ -30,3 +30,4 @@ ABS/
 .private_profile
 *.pid
 *.pyc
+*.exe
