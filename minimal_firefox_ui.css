@@ -5,14 +5,6 @@
   font-size: 14px !important;
 }
 
-#nav-bar {
-    visibility: visible !important;
-}
-
-#navigator-toolbox:hover > #nav-bar {
-    visibility: visible !important;
-}
-
 /* Tabs */
 .TabsToolbar {
   background: #101010 !important;
@@ -54,10 +46,6 @@
   background: #101010 !important;
 }
 
-#TabsToolbar > _moz_generated_content_before {
-   display: none !important;
-}
-
 /* Private browsing mode */
 
 #main-window #appmenu-toolbar-button {
@@ -77,18 +65,12 @@
   display: none !important;
 }
 
-/* Back button only when useful */
-
-#back-button[disabled="true"] { 
-  display: none;
-}
-
 /* URL Bar */
 #urlbar {
     box-shadow: none !important;
     padding: 0 !important;
-    margin-left: 0 !important;
     padding-left: 4px !important;
+    margin-left: 4px !important;
     margin-right: 4px !important;
     height: 22px !important;
     color: #d0d0d0 !important;
@@ -147,6 +129,16 @@ textbox#urlbar {
 /* Remove "Star", "Go" and "Dropdown" buttons from the URL bar. */
 #star-button, #go-button, .autocomplete-history-dropmarker {
 	display: none !important;
+}
+
+/* Forward / Back button only when useful */
+
+#back-button[disabled="true"] { 
+  display: none;
+}
+
+#forward-button[disabled="true"] { 
+  display: none;
 }
 
 /* Button images */
