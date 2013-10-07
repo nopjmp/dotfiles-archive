@@ -1,12 +1,12 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
 * {
-  font-family: Tamsyn !important;
+  font-family: Termsyn !important;
   font-size: 14px !important;
 }
 
 #nav-bar {
-    visibility: collapse !important;
+    visibility: visible !important;
 }
 
 #navigator-toolbox:hover > #nav-bar {
@@ -54,6 +54,10 @@
   background: #101010 !important;
 }
 
+#TabsToolbar > _moz_generated_content_before {
+   display: none !important;
+}
+
 /* Private browsing mode */
 
 #main-window #appmenu-toolbar-button {
@@ -69,7 +73,7 @@
 
 /* Tab new button */
 
-.tabs-newtab-button {
+.tabs-newtab-button, #new-tab-button {
   display: none !important;
 }
 
@@ -77,4 +81,100 @@
 
 #back-button[disabled="true"] { 
   display: none;
+}
+
+/* URL Bar */
+#urlbar {
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 4px !important;
+    margin-right: 4px !important;
+    height: 22px !important;
+    color: #d0d0d0 !important;
+}
+
+textbox#urlbar {
+    background: transparent !important;
+    -moz-appearance: none !important;
+    border: none !important;
+}
+
+#searchbar .searchbar-textbox {
+    color: #d0d0d0 !important;
+    background: #101010 !important;
+    box-shadow: none !important;
+    height: 25px !important;
+    font-family: Termsyn !important;
+    font-size: 10px !important;
+}
+
+#nav-bar {
+    background: #101010 !important;
+    border: none !important;
+    border-bottom: none !important;
+    margin-top: 0 !important;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+    padding-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+#identity-box {
+    background: none !important;
+    color: #99a !important;
+}
+
+#main-window #navigator-toolbox {
+    background: #101010 !important;
+    border-bottom: 2px solid #bb88dd !important;
+}
+
+#main-window:not([privatebrowsingmode]) #navigator-toolbox {
+    background: #101010 !important;
+    border-bottom: 2px solid #80ff00 !important;
+}
+
+#notification-popup-box {
+   background: transparent !important;
+   border-right: none !important;
+}
+
+#navigator-toolbox:after {
+    display: none !important;
+}
+
+/* Remove "Star", "Go" and "Dropdown" buttons from the URL bar. */
+#star-button, #go-button, .autocomplete-history-dropmarker {
+	display: none !important;
+}
+
+/* Button images */
+
+#back-button > .toolbarbutton-icon {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAABhJREFUKJFjYBha4MKFC/+HmuIhooliAAA6tRgKf0DilwAAAABJRU5ErkJggg==);
+}
+
+#forward-button > .toolbarbutton-icon {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAABhJREFUKJFjYBj84MKFC/+Hi6ZBopgmAABj6RgKrTR/bQAAAABJRU5ErkJggg==);
+}
+
+#urlbar-stop-button > .toolbarbutton-icon {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAACNJREFUKJFjYBh0gBGZc+HChf/YFBkYGMDVMZFqw3DQMAgBAKxDBAz/FoxvAAAAAElFTkSuQmCC);
+}
+
+#stop-button > .toolbarbutton-icon {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAACNJREFUKJFjYBh0gBGZc+HChf/YFBkYGMDVMZFqw3DQMAgBAKxDBAz/FoxvAAAAAElFTkSuQmCC);
+}
+
+#urlbar-reload-button > .toolbarbutton-icon {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAADRJREFUKJFjYBh0gBGb4IULF/7D2AYGBihqmPCZhq4Yp8noNEEb8JmM10nYAIZJ+Dw8SAEAm3kTeMgo/hoAAAAASUVORK5CYII=);
+}
+
+#reload-button > .toolbarbutton-icon {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAADRJREFUKJFjYBh0gBGb4IULF/7D2AYGBihqmPCZhq4Yp8noNEEb8JmM10nYAIZJ+Dw8SAEAm3kTeMgo/hoAAAAASUVORK5CYII=);
+}
+
+#home-button > .toolbarbutton-icon {
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAClJREFUKJFjYBga4MKFC/9xyTHiU2xgYIAhz4hLMS5NTMQ6k2wNwwEAAIzgC3ZB/+zOAAAAAElFTkSuQmCC);
 }

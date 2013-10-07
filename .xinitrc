@@ -19,6 +19,7 @@ fi
 firefox-sync &
 
 # I hate cursors
+urxvtd -q -o -f &
 unclutter -idle 10 &
 xrdb -merge ~/.Xresources
 exec awesome
