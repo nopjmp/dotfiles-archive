@@ -47,5 +47,7 @@ source $ZSH/oh-my-zsh.sh
 # disable XOFF to prevent confusion
 stty -ixon -ixoff
 
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 # Customize to your needs...
 export PATH=$PATH:/home/nopjmp/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl
