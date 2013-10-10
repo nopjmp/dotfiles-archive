@@ -7,22 +7,24 @@ call vundle#rc()
 " Manage Vundle with Vundle
 Bundle 'gmarik/vundle'
 
-" Completion plugin
-Bundle 'Valloric/YouCompleteMe'
-set completeopt-=preview
-let g:ycm_key_detailed_diagnostics = '<leader>c'
-let g:ycm_confirm_extra_conf = 0
-
 " Airline
 Bundle 'bling/vim-airline'
 " Tab formating plugin
 Bundle 'godlygeek/tabular'
 " Color schemes
 Bundle 'tomasr/molokai'
-Bundle 'guns/xterm-color-table.vim'
 " Git Plugin
 Bundle 'tpope/vim-fugitive'
+" tagbar
+Bundle 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+" Org-mode for vim
+Bundle 'jceb/vim-orgmode'
 " Vimscript
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'AnsiEsc.vim'         
+Bundle 'AnsiEsc.vim'
+Bundle 'NrrwRgn'
+Bundle 'calendar.vim'
+Bundle 'speeddating.vim'
+Bundle 'utl.vim'

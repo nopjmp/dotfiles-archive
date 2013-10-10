@@ -10,10 +10,16 @@ endif
 set t_Co=256
 
 " molokai scheme
-let g:molokai_original=1
-let g:rehash256=1
-set background=dark
+"let g:molokai_original=1
+"let g:rehash256=1
+"set background=dark
 colorscheme molokai
+
+" GUI
+if has("gui_running")
+  set guioptions-=M
+  set guifont=Termsyn\ 11
+endif
 
 " backups
 set backup
@@ -114,7 +120,7 @@ command! W :execute ':silent w !sudo % > /dev/null' | :edit!
 command! Wq :execute ':W' | :q
 command! WQ :Wq
 map ZS :Wq<Return>
-map <C-s> :w<cr>
+map <C-s> :w
 
 " solid underscore
 "let &t_SI .= "\<ESC>[4 q"
