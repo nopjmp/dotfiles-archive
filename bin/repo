@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#lets use python2
+source /home/nopjmp/venv/bin/activate
+python /home/nopjmp/bin/repo.py $@
