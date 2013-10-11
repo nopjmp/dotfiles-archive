@@ -36,8 +36,8 @@ local modkey  = "Mod4"
 
 -- Standard programs
 local browser    = os.getenv("BROWSER") or "firefox"
-local terminal   = "urxvtc"
-local editor     = terminal .. " -e vim "
+local terminal   = "urxvt"
+local editor     = "gvim"
 local tasks      = terminal .. " -e htop "
 local files      = terminal .. " -e ranger "
 local irc        = terminal .. " -e irssi "
@@ -575,10 +575,10 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, "Control" }, "r", awesome.restart),
 
 	-- Tags
-	awful.key({ modkey, "Control" }, "h", awful.tag.viewprev),
-	awful.key({ modkey, "Control" }, "l", awful.tag.viewnext),
-
-	-- Escape from focus traps (eg Flash plugin in Firefox)
+	--awful.key({ modkey, "Control" }, "h", awful.tag.viewprev),
+	--awful.key({ modkey, "Control" }, "l", awful.tag.viewnext),
+	
+  -- Escape from focus traps (eg Flash plugin in Firefox)
 	awful.key({ modkey,           }, "z", function () awful.util.spawn("clickwin") end),
 
 	-- Tab
@@ -640,7 +640,13 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, "Shift"   }, ".", awful.client.restore),
 	awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
 
-	-- Layout manipulation
+  -- TODO: make this its own function or client mode
+  awful.key({ modkey, "Mod1"    }, "h",     function () awful.tag.incmwfact( 0.01)    end),
+  awful.key({ modkey, "Mod1"    }, "l",     function () awful.tag.incmwfact(-0.01)    end),
+  awful.key({ modkey, "Mod1"    }, "j",     function () awful.client.incwfact( 0.01)    end),
+  awful.key({ modkey, "Mod1"    }, "k",     function () awful.client.incwfact(-0.01)    end),
+
+  -- Layout manipulation
 	awful.key({ modkey,           }, "s", function () awful.layout.inc(layouts,  1) end),
 	awful.key({ modkey,           }, "a", function () awful.layout.inc(layouts, -1) end),
 
