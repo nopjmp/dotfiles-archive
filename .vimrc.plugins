@@ -17,12 +17,16 @@ Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-fugitive'
 " tagbar
 Bundle 'majutsushi/tagbar'
-nmap <F8> :TagbarToggle<CR>
+noremap <F2> :TagbarToggle<CR>
 " Org-mode for vim
 Bundle 'jceb/vim-orgmode'
+" autoformat
+Bundle 'Chiel92/vim-autoformat'
+noremap <F3> :Autoformat<CR><CR>
 " Vimscript
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+noremap <F4> :FufFile<CR>
 Bundle 'AnsiEsc.vim'
 Bundle 'NrrwRgn'
 Bundle 'calendar.vim'

@@ -9,19 +9,21 @@ endif
 " COLOR
 set t_Co=256
 
-" molokai scheme
-"let g:molokai_original=1
-"let g:rehash256=1
-"set background=dark
-colorscheme molokai
-
 " GUI
 if has("gui_running")
-  set guioptions-=M
+  set guioptions-=m
+  set guioptions-=T
+  set guioptions-=r
+  set guiheadroom=0
   set guifont=Termsyn\ 11
+else
+  let g:molokai_original=1
+  let g:rehash256=1
+  set background=dark
 endif
+colorscheme molokai
 
-" backups
+" backups             
 set backup
 " unclutter
 set backupdir=~/.vim/backup,/tmp
@@ -76,9 +78,9 @@ map <C-l> :tabnext<cr>
 map <space> /
 map <C-space> ?
 
-" Ability to move lines
-no <down> ddp
-no <up> ddkP
+" Map Ctrl + <UP/DOWN> to move lines
+no <C-down> ddp
+no <C-up> ddkP
 
 " Auto center
 nmap G Gzz
