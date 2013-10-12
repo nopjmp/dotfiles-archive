@@ -575,10 +575,10 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey, "Control" }, "r", awesome.restart),
 
 	-- Tags
-	--awful.key({ modkey, "Control" }, "h", awful.tag.viewprev),
-	--awful.key({ modkey, "Control" }, "l", awful.tag.viewnext),
-	
-  -- Escape from focus traps (eg Flash plugin in Firefox)
+	awful.key({ modkey, "Control" }, "h", awful.tag.viewprev),
+	awful.key({ modkey, "Control" }, "l", awful.tag.viewnext),
+
+	-- Escape from focus traps (eg Flash plugin in Firefox)
 	awful.key({ modkey,           }, "z", function () awful.util.spawn("clickwin") end),
 
 	-- Tab
@@ -758,10 +758,17 @@ require("awful.rules").rules = {
 		  focus        = awful.client.focus.filter,
 		  keys         = clientkeys,
 	  },
-    callback   = awful.client.setslave 
+    callback = awful.client.setslave 
+  },
+  { rule       = { class = "Gimp" },
+    properties = { floating = true
+                  }
   },
   { rule       = { class = "Steam" },
-    properties = { floating = true } },
+    properties = { border_width = 0, 
+                   floating = true 
+                 } 
+  },
 	{ rule       = { name = "Xonotic" },
 	  properties = { fullscreen = true } },
 }
