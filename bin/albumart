@@ -1,0 +1,29 @@
+#!/bin/sh
+# Finds and resizes album art, then prints path
+
+thumbdir="$HOME/.mpd/thumbs"
+coverthumb="$thumbdir/$(mpc current -f %album% | sed -e 's/\//_/g').png"
+
+[ -r "$coverthumb" ] && echo -n "$coverthumb" && exit
+
+musicdir="$(grep -e '^music_directory' /etc/mpd.conf)"
+musicdir="${musicdir#* \"}"
+musicdir="${musicdir#*	\"}"
+musicdir="${musicdir%\"}"
+musicdir="$(echo "$musicdir" | sed -e "s|^~|$HOME|")"
+musicfile="$(mpc current -f %file%)"
+mkdir -p "$thumbdir"
+
+cover="$(find "$musicdir/${musicfile%/*}" \
+	-iname '*.png'  -print -o \
+	-iname '*.jpg'  -print -o \
+	-iname '*.jpeg' -print \
+	-quit)"
+
+if [ -z "$cover" ]; then
+	exit 1
+fi
+
+convert "$cover" \
+	-thumbnail 80x80^ -gravity center -extent 80x80 "${coverthumb}" &&
+	echo -n "${coverthumb}"

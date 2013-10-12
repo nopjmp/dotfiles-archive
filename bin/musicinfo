@@ -1,0 +1,37 @@
+#!/bin/sh
+# Formatted music info
+
+eval "$(mpc current -f \
+'
+Title="%title%"
+Artist="%artist%"
+Album="%album%"
+Date="%date%"
+Time="%time%"
+File="%file%"
+')"
+
+if [ -z "$Title" ]; then
+	Title="$(basename "$File")"
+fi
+
+max=0
+for line in "$Artist" "$Album" "$Date" \
+	"$(echo "$Title" | cut -c9-)"
+do
+	len="$(echo -n $line | wc -m)"
+	if [ "$len" -gt "$max" ]; then
+		max=$len
+	fi
+done
+
+pad() {
+	len="$(echo -n "$1" | wc -m)"
+	printf "%$((max-len))s"
+}
+
+printf "$Title\n\n"
+printf "Artist $(pad "$Artist") %s\n" "$Artist"
+printf "Album  $(pad "$Album") %s\n" "$Album"
+printf "Date   $(pad "$Date") %s\n" "$Date"
+printf "Time   $(pad "$Time") %s" "$Time"
