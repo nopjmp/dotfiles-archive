@@ -6,7 +6,7 @@ coverthumb="$thumbdir/$(mpc current -f %album% | sed -e 's/\//_/g').png"
 
 [ -r "$coverthumb" ] && echo -n "$coverthumb" && exit
 
-musicdir="$(grep -e '^music_directory' /etc/mpd.conf)"
+musicdir="$(grep -e '^music_directory' $HOME/.mpdconf)"
 musicdir="${musicdir#* \"}"
 musicdir="${musicdir#*	\"}"
 musicdir="${musicdir%\"}"
