@@ -11,17 +11,15 @@ set t_Co=256
 
 " GUI
 if has("gui_running")
+  colorscheme molokai
   set guioptions-=m
   set guioptions-=T
   set guioptions-=r
   set guiheadroom=0
-  set guifont=Termsyn\ 11
+  set guifont=Monaco\ 10
 else
-  let g:molokai_original=1
-  let g:rehash256=1
-  set background=dark
+  colorscheme custom
 endif
-colorscheme molokai
 
 " backups             
 set backup
